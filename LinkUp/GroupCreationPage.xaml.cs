@@ -1,3 +1,5 @@
+using LinkUp.ViewModel;
+
 namespace LinkUp;
 
 public partial class GroupCreationPage : ContentPage

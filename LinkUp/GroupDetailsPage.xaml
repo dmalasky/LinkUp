@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LinkUp.GroupDetailsPage"
+             Title="GroupDetailsPage">
+    <VerticalStackLayout Padding="10">
+        <Label 
+            Text="Group name: Oh you know"
+            FontSize="20"
+            FontAttributes="Bold"
+            VerticalOptions="Center" 
+            HorizontalOptions="StartAndExpand" />
+        <Label 
+             Text="Members: Ben, Moses, Daniel"
+             FontSize="20"
+             FontAttributes="Bold"
+             VerticalOptions="Center" 
+             HorizontalOptions="StartAndExpand" />
+        <Label 
+             Text="Goal: [We want to have a meeting]"
+             FontSize="20"
+             FontAttributes="Bold"
+             VerticalOptions="Center" 
+             HorizontalOptions="StartAndExpand" />
+        <Label 
+             Text="My Availability:"
+             FontSize="20"
+             FontAttributes="Bold"
+             VerticalOptions="Center" 
+             HorizontalOptions="StartAndExpand" />
+        <Entry Placeholder="For person to input times"/>
+        <Label 
+             Text="Team member2 Availability: Waiting"
+             FontSize="20"
+             FontAttributes="Bold"
+             VerticalOptions="Center" 
+             HorizontalOptions="StartAndExpand" />
+        <Label></Label>
+        <Label 
+             Text="Team member3 Availability: 4:00pm, 5:00pm"
+             FontSize="20"
+             FontAttributes="Bold"
+             VerticalOptions="Center" 
+             HorizontalOptions="StartAndExpand" />
+
+        <Label></Label>
+        <Frame>
+            <Label 
+                Text="The Purpose of this page is to show the team details red box is proof of grahpic calendar concept"
+                FontSize="13"
+                FontAttributes="Bold"
+                VerticalOptions="Center" 
+                HorizontalOptions="StartAndExpand" />
+        </Frame>
+        <Label></Label>
+
+        <BoxView Color="red"
+                CornerRadius="5"
+                HeightRequest="50"
+                WidthRequest="100" 
+                HorizontalOptions="Start"/>
+        <BoxView Color="Green"
+                CornerRadius="5"
+                HeightRequest="50"
+                WidthRequest="100" 
+                HorizontalOptions="Center"/>
+        <BoxView Color="red"
+                CornerRadius="5"
+                HeightRequest="50"
+                WidthRequest="100" 
+                HorizontalOptions="Start"/>
+
+
+        <Picker Title="Choose a time:"
+                SelectedItem="{Binding SelectedOption}"
+                ItemsSource="{Binding Options}"/>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>
