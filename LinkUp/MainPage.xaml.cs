@@ -52,18 +52,19 @@ public partial class MainPage : ContentPage
     {
         var logoutResult = await _oktaClient.LogoutAsync(_authenticationData.IdentityToken);
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        async void Button_Clicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync(nameof(GroupCreationPage));
-        if (!logoutResult.IsError)
-        {
-            _authenticationData = null;
-            LoginView.IsVisible = true;
-            HomeView.IsVisible = false;
-        }
-        else
-        {
-            await DisplayAlert("Error", logoutResult.ErrorDescription, "OK");
+            if (!logoutResult.IsError)
+            {
+                _authenticationData = null;
+                LoginView.IsVisible = true;
+                HomeView.IsVisible = false;
+            }
+            else
+            {
+                await DisplayAlert("Error", logoutResult.ErrorDescription, "OK");
+            }
         }
     }
 }
