@@ -7,6 +7,11 @@ namespace LinkUp
     {
         public static MauiApp CreateMauiApp()
         {
+            string root = new Globals().ROOT_DIRECTORY;
+            Directory.CreateDirectory(root + Globals.USER_DIRECTORY);
+            Directory.CreateDirectory(root + Globals.GROUP_DIRECTORY);
+
+
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
@@ -24,9 +29,6 @@ namespace LinkUp
             // Transient created and destroyed everytime
             builder.Services.AddTransient<DetailPage>();
             builder.Services.AddTransient<DetailViewModel>();
-
-            // User-added singletons
-            builder.Services.AddSingleton<GroupList>();
 
 #if DEBUG
             builder.Logging.AddDebug();

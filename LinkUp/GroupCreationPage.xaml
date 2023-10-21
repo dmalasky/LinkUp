@@ -4,9 +4,9 @@
              x:Class="LinkUp.GroupCreationPage"
              Title="GroupCreationPage">
     <StackLayout Padding="10" Spacing="10">
-        <Entry Placeholder="Group Name" />
+        <Entry x:Name="gName" Placeholder="Group Name"/>
         <!--<Entry Placeholder="Who to Invite" />-->
-        <Entry Placeholder="Goal" />
+        <Entry x:Name="gGoal" Placeholder="Goal"/>
         <!--<Entry Placeholder="Availability" />-->
 
         <Button Text="Submit" Clicked="ButtonCreateGroup" />

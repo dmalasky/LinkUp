@@ -24,7 +24,7 @@ namespace LinkUp
 
         public Group(string newName) : base(Globals.GROUP_UID_LENGTH)
         {
-            string[] jsonFiles = Directory.GetFiles(Globals.GROUP_DIRECTORY, "*.json");
+            string[] jsonFiles = Directory.GetFiles(new Globals().ROOT_DIRECTORY + Globals.GROUP_DIRECTORY, "*");
             for (int i = 0; i < jsonFiles.Length; i++)
             {
                 jsonFiles[i] = Path.GetFileNameWithoutExtension(jsonFiles[i]);
@@ -41,5 +41,6 @@ namespace LinkUp
             newMember.uid = getUniqueUID(members.ConvertAll(x => (UniqueItem)x));
             members.Add(newMember);
         }
+
     }
 }
