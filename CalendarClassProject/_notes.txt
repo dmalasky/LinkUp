@@ -1,0 +1,9 @@
+Each group has a JSON containing:
+	Group name
+	List of users
+	Each user has a list of events
+		Events
+			Could be busyEvent or freeEvent?
+			User
+
+	If possible, store user hash values; then users can be saved seperatley if they want their schedules to be shared between groups
