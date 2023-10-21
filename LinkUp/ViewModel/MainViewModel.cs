@@ -45,7 +45,7 @@ namespace LinkUp.ViewModel
         [RelayCommand]
         async Task Tap(string s)
         {
-            await Shell.Current.GoToAsync($"nameof(DetailPage)?Text={s}"); // Works with DetailViewModel.cs 
+            await Shell.Current.GoToAsync($"{nameof(DetailPage)}?Text={s}"); // Works with DetailViewModel.cs 
         }
      
     }
