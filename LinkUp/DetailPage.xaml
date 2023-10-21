@@ -4,15 +4,24 @@
              x:Class="LinkUp.DetailPage"
              xmlns:viewmodel="clr-namespace:LinkUp.ViewModel"
              x:DataType="viewmodel:DetailViewModel"
-             Title="DetailPage">
-    <VerticalStackLayout Padding="20">
+             Title="{Binding Text}">
+    <Grid RowDefinitions="100, Auto, *"
+          ColumnDefinitions=".75*, .25*"
+          Padding="10"
+          RowSpacing="10"
+          ColumnSpacing="10">
+        
         <Label 
+            
             Text="{Binding Text}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" 
+            Grid.Row="0"
+            
+            HorizontalOptions="StartAndExpand" 
             FontSize="30"/>
 
         <Button Text="Go Back"
+                Grid.Row="2"
+                HorizontalOptions="CenterAndExpand"
                 Command="{Binding GoBackCommand}"/>
-    </VerticalStackLayout>
+    </Grid>
 </ContentPage>

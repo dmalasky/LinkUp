@@ -71,6 +71,9 @@
 	  <MauiXaml Update="DetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="GroupCreationPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="TeamListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

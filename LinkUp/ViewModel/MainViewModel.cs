@@ -21,7 +21,8 @@ namespace LinkUp.ViewModel
         [ObservableProperty]
         string text;
 
-        [RelayCommand]
+        // Adds a team/task
+        [RelayCommand] // Generates command for us
         void Add()
         {
             if (string.IsNullOrWhiteSpace(Text))
@@ -32,6 +33,7 @@ namespace LinkUp.ViewModel
             Text = string.Empty;
         }
 
+        // Deletes the team/task
         [RelayCommand]
         void Delete(string s)
         {
@@ -41,7 +43,7 @@ namespace LinkUp.ViewModel
             }
         }
 
-        // Generates command for us
+        // links to detailpage when clicked
         [RelayCommand]
         async Task Tap(string s)
         {

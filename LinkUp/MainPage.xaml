@@ -15,14 +15,17 @@
                  Source="linkup_logo.PNG"
                 BackgroundColor="Transparent"/>
 
-        <Entry Placeholder="Enter Task"
+        <!--<Entry Placeholder="Create Team"
                Text="{Binding Text}"
-               Grid.Row="1"/>
+               Grid.Row="1"/>-->
 
-        <Button Text="Add"
-                Command="{Binding AddCommand}"
-                Grid.Row="1"
-                Grid.Column="1"/>
+        <Button Text="Create a team"
+            Clicked="Button_Clicked"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2" />
+        
+        
 
         <CollectionView Grid.Row="2" Grid.ColumnSpan="2"
                         ItemsSource="{Binding Items}"
@@ -53,6 +56,7 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        
 
 
     </Grid>
