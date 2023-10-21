@@ -7,12 +7,25 @@ public partial class GroupCreationPage : ContentPage
 	public GroupCreationPage()
 	{
 		InitializeComponent();
-	}
+
+        string groupName = GroupName.Text;
+        string members = Members.Text;
+        string goal = Goal.Text;
+        DateTime day = Day.Date;
+
+    }
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
+
         
+
+        // populate list of groups
+
+        // IF all not blank go back to main
         await Shell.Current.GoToAsync("..");
+
+        
     }
 
     // Inside GroupCreationPage.xaml.cs

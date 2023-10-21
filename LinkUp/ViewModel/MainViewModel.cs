@@ -28,7 +28,7 @@ namespace LinkUp.ViewModel
             if (string.IsNullOrWhiteSpace(Text))
                 return;
 
-            Items.Add(text);
+            Items.Add(Text);
             // Add our item
             Text = string.Empty;
         }
