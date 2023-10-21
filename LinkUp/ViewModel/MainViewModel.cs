@@ -43,13 +43,8 @@ namespace LinkUp.ViewModel
             }
         }
 
-        // links to detailpage when clicked
-        [RelayCommand]
-        async Task Tap(string s)
-        {
-            await Shell.Current.GoToAsync($"{nameof(DetailPage)}?Text={s}"); // Works with DetailViewModel.cs 
-        }
-
+        
+    
         // New method to add a group name
         public void AddGroupName(string groupName)
         {

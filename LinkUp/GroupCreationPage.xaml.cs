@@ -9,6 +9,12 @@ public partial class GroupCreationPage : ContentPage
 		InitializeComponent();
 	}
 
+    private async void Button_Clicked(object sender, EventArgs e)
+    {
+        
+        await Shell.Current.GoToAsync("..");
+    }
+
     // Inside GroupCreationPage.xaml.cs
     //private async void SubmitButton_Clicked(object sender, EventArgs e)
     //{

@@ -8,7 +8,7 @@
 
             
             Routing.RegisterRoute(nameof(GroupCreationPage), typeof(GroupCreationPage));
-            Routing.RegisterRoute(nameof(DetailPage), typeof(DetailPage));
+           
             
         }
     }

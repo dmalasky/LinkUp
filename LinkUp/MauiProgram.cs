@@ -21,10 +21,7 @@ namespace LinkUp
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MainViewModel>();
 
-            // Transient created and destroyed everytime
-            builder.Services.AddTransient<DetailPage>();
-            builder.Services.AddTransient<DetailViewModel>();
-
+            
 #if DEBUG
             builder.Logging.AddDebug();
             #endif

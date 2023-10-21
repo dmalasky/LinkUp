@@ -8,12 +8,12 @@
 
 
     <StackLayout Padding="10" Spacing="10">
-        <Entry Placeholder="Group Name" />
-        <Entry Placeholder="Who to Invite" />
-        <Entry Placeholder="Goal" />
-        <DatePicker></DatePicker>
-            
+        <Entry x:Name="GroupName" Placeholder="Group Name" />
+        <Entry x:Name="Members" Placeholder="Who to Invite" />
+        <Entry x:Name="Goal" Placeholder="Goal" />
+        <DatePicker x:Name="Day"/>
+
         <Button Text="Submit" 
-                Command="{Binding AddCommand}"/>
+                Clicked="Button_Clicked"/>
     </StackLayout>
 </ContentPage>
