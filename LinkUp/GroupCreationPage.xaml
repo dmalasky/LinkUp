@@ -5,10 +5,10 @@
              Title="GroupCreationPage">
     <StackLayout Padding="10" Spacing="10">
         <Entry Placeholder="Group Name" />
-        <Entry Placeholder="Who to Invite" />
+        <!--<Entry Placeholder="Who to Invite" />-->
         <Entry Placeholder="Goal" />
-        <Entry Placeholder="Availability" />
+        <!--<Entry Placeholder="Availability" />-->
 
-        <Button Text="Submit" />
+        <Button Text="Submit" Clicked="ButtonCreateGroup" />
     </StackLayout>
 </ContentPage>

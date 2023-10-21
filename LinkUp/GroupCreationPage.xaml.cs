@@ -6,4 +6,9 @@ public partial class GroupCreationPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	async void ButtonCreateGroup(object sender, EventArgs e)
+	{
+		await DisplayAlert("title", "message", "okay");
+	}
 }
