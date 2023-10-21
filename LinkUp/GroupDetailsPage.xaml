@@ -71,7 +71,9 @@
                 HorizontalOptions="Start"/>
 
 
-        <Picker></Picker>
+        <Picker Title="Choose a time:"
+                SelectedItem="{Binding SelectedOption}"
+                ItemsSource="{Binding Options}"/>
 
 
 
