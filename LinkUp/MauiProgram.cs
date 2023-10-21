@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using LinkUp.ViewModel;
+using Microsoft.Extensions.Logging;
 
 namespace LinkUp
 {
@@ -15,9 +16,18 @@ namespace LinkUp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+
+            // Singleton global creates one copy
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MainViewModel>();
+
+            // Transient created and destroyed everytime
+            builder.Services.AddTransient<DetailPage>();
+            builder.Services.AddTransient<DetailViewModel>();
+
 #if DEBUG
-		builder.Logging.AddDebug();
-#endif
+            builder.Logging.AddDebug();
+            #endif
 
             return builder.Build();
         }
