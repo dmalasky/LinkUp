@@ -1,19 +1,27 @@
-﻿using LinkUp.ViewModel;
+﻿using System;
+using IdentityModel.OidcClient;
+using IdentityModel.OidcClient.Results;
 
-namespace LinkUp
+namespace LinkUp;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    int count = 0;
+
+    public MainPage()
     {
+        InitializeComponent();
+    }
 
-        public MainPage(MainViewModel vm)
-        {
-            InitializeComponent();
-            BindingContext = vm;
-        }
+    private void OnCounterClicked(object sender, EventArgs e)
+    {
+        count++;
 
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            await Shell.Current.GoToAsync(nameof(GroupCreationPage));
-        }
+        if (count == 1)
+            CounterBtn.Text = $"Clicked {count} time";
+        else
+            CounterBtn.Text = $"Clicked {count} times";
+
+        SemanticScreenReader.Announce(CounterBtn.Text);
     }
 }
