@@ -24,8 +24,10 @@
             Grid.Row="1"
             Grid.Column="0"
             Grid.ColumnSpan="2" />
-        
-        
+
+          
+
+
 
         <CollectionView Grid.Row="2" Grid.ColumnSpan="2"
                         ItemsSource="{Binding Items}"
@@ -60,5 +62,6 @@
 
 
     </Grid>
+    
 
 </ContentPage>

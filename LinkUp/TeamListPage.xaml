@@ -17,5 +17,9 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+        <Button Text="Create a team"
+            Clicked="Button_Clicked_1"/>
+
     </VerticalStackLayout>
 </ContentPage>

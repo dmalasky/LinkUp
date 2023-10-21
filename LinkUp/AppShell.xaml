@@ -5,8 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:LinkUp"
     Shell.FlyoutBehavior="Disabled">
-    <!--
-     Do like this if you want to have multiple pages available
+    
+     <!--Do like this if you want to have multiple pages available.-->
     
     <TabBar>
         <ShellContent
@@ -17,11 +17,24 @@
             Title="My Teams"
             ContentTemplate="{DataTemplate local:TeamListPage}"
             Route="TeamListPage" />
-    </TabBar>-->
+        <ShellContent
+            Title="GroupDeets"
+            ContentTemplate="{DataTemplate local:GroupDetailsPage}"
+            Route="GroupDetailsPage" />
+        <ShellContent
+            Title="Test"
+            ContentTemplate="{DataTemplate local:Test}"
+            Route="Test" />
+        <ShellContent
+            Title="TimePick"
+            ContentTemplate="{DataTemplate local:TimePickPage}"
+            Route="TimePickPage" />
 
-    <ShellContent
+    </TabBar>
+
+    <!--<ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage" />-->
 
 </Shell>
