@@ -11,7 +11,7 @@
         <Entry Placeholder="Group Name" />
         <Entry Placeholder="Who to Invite" />
         <Entry Placeholder="Goal" />
-        <Entry Placeholder="Availability" />
+        <DatePicker></DatePicker>
             
         <Button Text="Submit" 
                 Command="{Binding AddCommand}"/>
