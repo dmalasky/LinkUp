@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Android.App;
 using Android.Content.PM;
 
-namespace OktaMauiSampleApp
+namespace LinkUp
 {
     [Activity(NoHistory = true, LaunchMode = LaunchMode.SingleTop, Exported = true)]
     [IntentFilter(new[] { Android.Content.Intent.ActionView },

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using IdentityModel.Client;
 using IdentityModel.OidcClient.Browser;
 
-namespace OktaMauiSampleApp.Okta
+namespace LinkUp.Okta
 {
     public class WebBrowserAuthenticator : IdentityModel.OidcClient.Browser.IBrowser
     {

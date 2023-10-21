@@ -1,9 +1,9 @@
 ﻿using System;
 using IdentityModel.OidcClient;
 using IdentityModel.OidcClient.Results;
-using OktaMauiSampleApp.Okta;
+using LinkUp.Okta;
 
-namespace OktaMauiSampleApp;
+namespace LinkUp;
 
 public partial class MainPage : ContentPage
 {

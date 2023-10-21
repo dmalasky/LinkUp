@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
-using OktaMauiSampleApp.Okta;
-using OktaClientConfiguration = OktaMauiSampleApp.Okta.OktaClientConfiguration;
+using LinkUp.Okta;
+using OktaClientConfiguration = LinkUp.Okta.OktaClientConfiguration;
 
-namespace OktaMauiSampleApp;
+namespace LinkUp;
 
 public static class MauiProgram
 {

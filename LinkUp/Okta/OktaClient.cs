@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace OktaMauiSampleApp.Okta
+namespace LinkUp.Okta
 {
     public class OktaClient
     {

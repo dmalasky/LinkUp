@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using IBrowser = IdentityModel.OidcClient.Browser.IBrowser;
 
-namespace OktaMauiSampleApp.Okta
+namespace LinkUp.Okta
 {
     public class OktaClientConfiguration
     {
