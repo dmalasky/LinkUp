@@ -1,3 +1,5 @@
+using LinkUp.ViewModel;
+
 namespace LinkUp;
 
 public partial class GroupCreationPage : ContentPage
@@ -5,33 +7,34 @@ public partial class GroupCreationPage : ContentPage
 	public GroupCreationPage()
 	{
 		InitializeComponent();
-	}
 
-	async void ButtonCreateGroup(object sender, EventArgs e)
-	{
-		//await DisplayAlert("Current Directory:", FileSystem.Current.AppDataDirectory, "done");
-		//return;
+        string groupName = GroupName.Text;
+        string members = Members.Text;
+        string goal = Goal.Text;
+        DateTime day = Day.Date;
 
-		if (string.IsNullOrEmpty(gName.Text))
-		{
-			await DisplayAlert("Group creation error:", "Group name must not be blank", "Okay");
-			return;
-		}
+    }
 
-		GroupList g = new();
-		g.Add(new(gName.Text));
+    private async void Button_Clicked(object sender, EventArgs e)
+    {
 
-		string listStats = "Number of lists: " + g.Count.ToString();
-		listStats += "\n";
-		foreach (Group item in g)
-		{
-			listStats += "\n";
-			listStats += "Group: " + item.name + "\n";
-			listStats += "\tUID: " + item.uid + "\n";
-		}
+        
 
-		await DisplayAlert("GroupList Stats:", listStats, "done");
+        // populate list of groups
 
-		g.SaveAll();
-	}
+        // IF all not blank go back to main
+        await Shell.Current.GoToAsync("..");
+
+        
+    }
+
+    // Inside GroupCreationPage.xaml.cs
+    //private async void SubmitButton_Clicked(object sender, EventArgs e)
+    //{
+    //    string groupName = groupNameEntry.Text; // Replace with the actual Entry field's name
+
+    //    MainViewModel.AddGroupName(groupName); // Add the group name to MainViewModel
+
+    //    await Navigation.PopAsync(); // Navigate back to MainPage
+    //}
 }

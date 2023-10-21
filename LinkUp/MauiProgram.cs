@@ -33,13 +33,10 @@ public static class MauiProgram
             // Use "https://{yourOktaDomain}/oauth2/default" for the "default" authorization server, or
             // "https://{yourOktaDomain}/oauth2/<MyCustomAuthorizationServerId>"
 
-            OktaDomain = "https://dev-72105010.okta.com/oauth2/default",
-            ClientId = "foo",
-            RedirectUri = "myapp://callback",
-            Browser = new WebBrowserAuthenticator()
-        };
-
-        builder.Services.AddSingleton(new OktaClient(oktaClientConfiguration));
+            
+#if DEBUG
+            builder.Logging.AddDebug();
+            #endif
 
         return builder.Build();
     }

@@ -28,7 +28,7 @@ namespace LinkUp.ViewModel
             if (string.IsNullOrWhiteSpace(Text))
                 return;
 
-            Items.Add(text);
+            Items.Add(Text);
             // Add our item
             Text = string.Empty;
         }
@@ -43,12 +43,13 @@ namespace LinkUp.ViewModel
             }
         }
 
-        // links to detailpage when clicked
-        [RelayCommand]
-        async Task Tap(string s)
+        
+    
+        // New method to add a group name
+        public void AddGroupName(string groupName)
         {
-            await Shell.Current.GoToAsync($"{nameof(DetailPage)}?Text={s}"); // Works with DetailViewModel.cs 
+            Items.Add(groupName);
         }
-     
+
     }
 }
