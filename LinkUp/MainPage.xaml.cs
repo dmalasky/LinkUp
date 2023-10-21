@@ -1,20 +1,16 @@
 ﻿using System;
 using IdentityModel.OidcClient;
 using IdentityModel.OidcClient.Results;
-using LinkUp.Okta;
 
 namespace LinkUp;
 
 public partial class MainPage : ContentPage
 {
     int count = 0;
-    private OktaClient _oktaClient;
-    private LoginResult _authenticationData;
 
-    public MainPage(OktaClient oktaClient)
+    public MainPage()
     {
         InitializeComponent();
-        _oktaClient = oktaClient;
     }
 
     private void OnCounterClicked(object sender, EventArgs e)
@@ -27,44 +23,5 @@ public partial class MainPage : ContentPage
             CounterBtn.Text = $"Clicked {count} times";
 
         SemanticScreenReader.Announce(CounterBtn.Text);
-    }
-
-    public async void OnLoginClicked(object sender, EventArgs e)
-    {
-        var loginResult = await _oktaClient.LoginAsync();
-
-        if (!loginResult.IsError)
-        {
-            _authenticationData = loginResult;
-            LoginView.IsVisible = false;
-            HomeView.IsVisible = true;
-
-            UserInfoLvw.ItemsSource = loginResult.User.Claims;
-            HelloLbl.Text = $"Hello, {loginResult.User.Claims.FirstOrDefault(x => x.Type == "name")?.Value}";
-        }
-        else
-        {
-            await DisplayAlert("Error", loginResult.ErrorDescription, "OK");
-        }
-    }
-
-    public async void OnLogoutClicked(object sender, EventArgs e)
-    {
-        var logoutResult = await _oktaClient.LogoutAsync(_authenticationData.IdentityToken);
-
-        async void Button_Clicked(object sender, EventArgs e)
-        {
-            await Shell.Current.GoToAsync(nameof(GroupCreationPage));
-            if (!logoutResult.IsError)
-            {
-                _authenticationData = null;
-                LoginView.IsVisible = true;
-                HomeView.IsVisible = false;
-            }
-            else
-            {
-                await DisplayAlert("Error", logoutResult.ErrorDescription, "OK");
-            }
-        }
     }
 }
