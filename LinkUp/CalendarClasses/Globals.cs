@@ -26,6 +26,7 @@ namespace LinkUp
             AllowTrailingCommas = true,
 			WriteIndented = true,
 		};
-		//public static JsonSerializerOptions { WriteIndented = true };
+        //public static JsonSerializerOptions { WriteIndented = true };
+
 	}
 }
