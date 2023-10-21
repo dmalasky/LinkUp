@@ -13,15 +13,11 @@ public static class MauiProgram
         Directory.CreateDirectory(root + Globals.GROUP_DIRECTORY);
 
 
-        var builder = MauiApp.CreateBuilder();
-        builder
-            .UseMauiApp<App>()
-            .ConfigureFonts(fonts =>
-            {
-                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-            });
+            // Singleton global creates one copy
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MainViewModel>();
 
+            
 #if DEBUG
         builder.Logging.AddDebug();
 #endif

@@ -2,13 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LinkUp.GroupCreationPage"
-             Title="GroupCreationPage">
-    <StackLayout Padding="10" Spacing="10">
-        <Entry x:Name="gName" Placeholder="Group Name"/>
-        <!--<Entry Placeholder="Who to Invite" />-->
-        <Entry x:Name="gGoal" Placeholder="Goal"/>
-        <!--<Entry Placeholder="Availability" />-->
+             Title="GroupCreationPage"
+             xmlns:viewmodel="clr-namespace:LinkUp.ViewModel"
+             x:DataType="viewmodel:MainViewModel">
 
-        <Button Text="Submit" Clicked="ButtonCreateGroup" />
+
+    <StackLayout Padding="10" Spacing="10">
+        <Entry x:Name="GroupName" Placeholder="Group Name" />
+        <Entry x:Name="Members" Placeholder="Who to Invite" />
+        <Entry x:Name="Goal" Placeholder="Goal" />
+        <DatePicker x:Name="Day"/>
+
+        <Button Text="Submit" 
+                Clicked="Button_Clicked"
+                Command="{Binding AddCommand}"/>
     </StackLayout>
 </ContentPage>
