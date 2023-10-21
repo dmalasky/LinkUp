@@ -25,6 +25,9 @@ namespace LinkUp
             builder.Services.AddTransient<DetailPage>();
             builder.Services.AddTransient<DetailViewModel>();
 
+            // User-added singletons
+            builder.Services.AddSingleton<GroupList>();
+
 #if DEBUG
             builder.Logging.AddDebug();
             #endif
