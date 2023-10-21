@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LinkUp.GroupCreationPage"
+             Title="GroupCreationPage">
+    <StackLayout Padding="10" Spacing="10">
+        <Entry x:Name="gName" Placeholder="Group Name"/>
+        <!--<Entry Placeholder="Who to Invite" />-->
+        <Entry x:Name="gGoal" Placeholder="Goal"/>
+        <!--<Entry Placeholder="Availability" />-->
+
+        <Button Text="Submit" Clicked="ButtonCreateGroup" />
+    </StackLayout>
+</ContentPage>

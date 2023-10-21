@@ -10,7 +10,8 @@ public partial class TeamListPage : ContentPage
         {
             new Team { Name = "Team 1" },
             new Team { Name = "Team 2" },
-            new Team { Name = "Team 3" }
+            new Team { Name = "Team 3" },
+            new Team { Name = "Team 4" }
         };
 
         // Set the ItemsSource of the ListView to the list of teams
