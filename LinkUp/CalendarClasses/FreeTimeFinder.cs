@@ -10,7 +10,7 @@ namespace LinkUp.CalendarClasses
 	internal class FreeTimeBlock
 	{
 		public int rank = 0;
-		public string[] availibilityList;
+		public List<string> availibilityList;
 		public DateTime dStart;
 		public DateTime dEnd;
 	}
@@ -18,7 +18,7 @@ namespace LinkUp.CalendarClasses
 
 	internal class FreeTimeFinder
 	{
-		List<FreeTimeBlock> blocks;
+		public List<FreeTimeBlock> blocks { get; }
 
 		DateTime RoundUp(DateTime dt, TimeSpan d)
 			{ return new DateTime((dt.Ticks + d.Ticks - 1) / d.Ticks * d.Ticks, dt.Kind); }
@@ -53,7 +53,7 @@ namespace LinkUp.CalendarClasses
 			 */
 			int lastRank = 0;
 			List<string> lastAvailibilityList = new();
-			DateTime lastStart;
+			DateTime lastStart = DateTime.MinValue;
 
 			for(DateTime timeslot = dateMin; timeslot <= dateMax; timeslot.AddMinutes(15))
 			{
@@ -77,11 +77,31 @@ namespace LinkUp.CalendarClasses
 				// compare with previous timeslot
 				if(thisRank != lastRank || thisAvailibilityList != lastAvailibilityList)
 				{
-					if(lastRank != 0 )
+					// lastrank was zero - rising edge
+					// this rank > last rank
+					// this rank < last rank
+
+					// close last? if last != 0
+					// open new? if this != 0
+					if(lastRank != 0) // clsoe last
+					{
+						var newTimeBlock = new FreeTimeBlock
+						{
+							rank = lastRank,
+							availibilityList = lastAvailibilityList,
+							dStart = lastStart,
+							dEnd = timeslot,
+						};
+
+						blocks.Add(newTimeBlock);
+					}
+					if(thisRank !=0) // open new
+					{
+						lastRank = thisRank;
+						lastAvailibilityList = thisAvailibilityList;
+					}
 				}
-
-
-			}
+			} // end for timeslot
 		}
 	}
 }
