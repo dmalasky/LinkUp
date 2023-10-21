@@ -21,14 +21,8 @@
             Title="GroupDeets"
             ContentTemplate="{DataTemplate local:GroupDetailsPage}"
             Route="GroupDetailsPage" />
-        <ShellContent
-            Title="Test"
-            ContentTemplate="{DataTemplate local:Test}"
-            Route="Test" />
-        <ShellContent
-            Title="TimePick"
-            ContentTemplate="{DataTemplate local:TimePickPage}"
-            Route="TimePickPage" />
+        
+        
 
     </TabBar>
 
