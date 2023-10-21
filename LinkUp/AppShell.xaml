@@ -13,16 +13,11 @@
             Title="Home"
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" />
-        <ShellContent
-            Title="My Teams"
-            ContentTemplate="{DataTemplate local:TeamListPage}"
-            Route="TeamListPage" />
+        
         <ShellContent
             Title="GroupDeets"
             ContentTemplate="{DataTemplate local:GroupDetailsPage}"
             Route="GroupDetailsPage" />
-        
-        
 
     </TabBar>
 
